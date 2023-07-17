@@ -19,7 +19,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.Scope;
-import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                         credential.setSelectedAccount(googleAccount.getAccount());
                         Drive googleDriveService =
                             new Drive.Builder(
-                                    AndroidHttp.newCompatibleTransport(),
+                                    new NetHttpTransport(),
                                     new GsonFactory(),
                                     credential)
                                .setApplicationName("Drive API Migration")
