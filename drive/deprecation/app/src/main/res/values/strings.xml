@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">Drive API Migration</string>
+  <string name="lbl_file_list">File List</string>
 </resources>
